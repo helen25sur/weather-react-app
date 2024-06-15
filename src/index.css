@@ -24,3 +24,139 @@ button,
 input {
   color: inherit;
 }
+
+.app-content {
+  background-color: var(--clr-body);
+  background-image: url("https://images.unsplash.com/photo-1495933925743-bb94d1d4ea4c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+}
+
+.app-header {
+  background-color: var(--clr-header);
+}
+
+.app-title {
+  color: var(--clr-main-title);
+}
+
+.search-form {
+  position: relative;
+}
+
+.search-btn_block {
+  max-width: 50px;
+  position: absolute;
+  top: 50%;
+  right: 70px;
+  transform: translateY(-50%);
+}
+
+.city-name {
+  color: var(--clr-city-name);
+}
+
+.weather-day {
+  min-width: 20%;
+}
+
+/* temporary: while don't have other days */
+.weather-day_active {
+  min-width: 30%;
+  margin: 0 auto;
+}
+
+#forecast-day-4 {
+  border-bottom-right-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.weather-details {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.additional-info {
+  letter-spacing: 1px;
+}
+
+.github-link {
+  letter-spacing: 2px;
+}
+
+@media screen and (max-width: 1200px) {
+  .app-content {
+    margin-top: 2rem;
+  }
+
+  .app-weather-days {
+    justify-content: center;
+  }
+
+  .weather-day_active {
+    min-width: 50%;
+  }
+
+  .weather-days {
+    margin-top: 1rem;
+  }
+
+  #forecast-day-0 {
+    border-bottom-left-radius: 15px;
+    border-top-left-radius: 15px;
+  }
+}
+
+@media screen and (max-width: 995px) {
+  .weather-day {
+    margin: 0.5rem;
+    min-width: 30%;
+    border-radius: 15px;
+  }
+
+  .weather-day_active {
+    min-width: 60%;
+  }
+
+  .weather-details {
+    justify-content: center;
+    row-gap: 1rem;
+  }
+
+  .weather-hours {
+    width: 15%;
+    border-bottom: 2px solid #dee2e6;
+  }
+
+  .weather-hours img {
+    width: 45px;
+  }
+}
+
+@media screen and (max-width: 765px) {
+  .search-form .col-12 {
+    padding-right: 0;
+  }
+
+  .weather-day {
+    min-width: 70%;
+    font-size: 20px;
+  }
+
+  .weather-day_active {
+    width: 100%;
+  }
+
+  .weather-day img {
+    width: 85px;
+  }
+
+  .weather-hours {
+    width: 25%;
+  }
+
+  .weather-hours img {
+    width: 55px;
+  }
+}
