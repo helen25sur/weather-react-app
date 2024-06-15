@@ -1,0 +1,26 @@
+:root {
+  --clr-text: #023e8a;
+  --clr-body: #003566;
+  --clr-header: #1b4965;
+  --clr-main-title: #bee9e8;
+  --clr-city-name: #0077b6;
+}
+
+body {
+  background-image: url("https://images.unsplash.com/photo-1428908728789-d2de25dbd4e2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: var(--clr-text);
+  min-height: 100vh;
+  display: flex;
+}
+
+a {
+  color: inherit;
+}
+
+button,
+input {
+  color: inherit;
+}
