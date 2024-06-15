@@ -1,12 +1,13 @@
 import CityAndDate from "./CityAndDate";
 import DayNow from "./days-info/DayNow";
 
-export default function Main() {
+export default function Main(weather) {
+  console.log(weather);
   return (
     <main className="app-main card-body row justify-content-center">
       <section className="app-weather-days row my-4">
-        <CityAndDate />
-        <DayNow />
+        <CityAndDate city={weather.city} />
+        <DayNow weather={weather} />
       </section>
     </main>
   )

@@ -1,9 +1,8 @@
-export default function CityAndDate() {
+export default function CityAndDate({ city }) {
   return (
     <div className="mb-3 bg-light-subtle py-2 shadow-lg rounded-1">
       <h2 id="city" className="city-name card-title text-capitalize">
-        {/* {city} */}
-        Bochum
+        {city}
       </h2>
       <span id="current-date">
         <strong>
