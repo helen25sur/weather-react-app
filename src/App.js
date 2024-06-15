@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { RotatingLines } from 'react-loader-spinner';
 
 import Header from "./components/Header";
 import Main from "./components/Main";
@@ -10,28 +11,53 @@ export default function App() {
 
   const [city, setCity] = useState("Berlin");
   const [weatherData, setWeatherData] = useState(null);
+  const [isLoaded, setIsLoaded] = useState(true);
 
+  function cityFromSearchInput(cityValue) {
+    setCity(cityValue);
+  }
+
+  async function fetchWeatherData() {
+
+    try {
+      const data = await searchingCurrentWeatherAPI(city);
+      setWeatherData(data);
+      setIsLoaded(true);
+    } catch (error) {
+      console.error(error);
+    }
+  }
 
   useEffect(() => {
-    async function fetchWeatherData() {
-      try {
-        const data = await searchingCurrentWeatherAPI(city);
-        setWeatherData(data);
-      } catch (error) {
-        console.error(error);
-      }
-    }
-
     fetchWeatherData();
   }, []);
 
-  if (!weatherData) {
-    return <div>Loading...</div>;
+  useEffect(() => {
+    setIsLoaded(false);
+    fetchWeatherData();
+  }, [city]);
+
+  if (!isLoaded) {
+    return (
+      <div className="app-content col-10 my-4 mx-auto card mb-3 shadow-lg h-75">
+        <Header cityFromSearchInput={cityFromSearchInput} />
+        <div className="mx-auto pt-4" >
+          <RotatingLines
+            strokeColor="#0b222f"
+            visible={true}
+            height="56"
+            width="56"
+            strokeWidth="5"
+            animationDuration="0.75"
+            ariaLabel="rotating-lines-loading" />
+        </div>
+
+      </div>);
   }
 
   return (
     <div className="app-content col-10 my-4 mx-auto card mb-3 shadow-lg mh-100">
-      <Header />
+      <Header cityFromSearchInput={cityFromSearchInput} />
       <Main {...weatherData} />
     </div>
   )

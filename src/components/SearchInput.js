@@ -1,13 +1,30 @@
-export default function SearchInput() {
+import { useState } from "react";
+
+export default function SearchInput({ cityFromSearchInput }) {
+
+  const [city, setCity] = useState("");
+
+  function changeHandler(event) {
+    setCity(event.target.value);
+  }
+
   return (
-    <form id="search-form" className="search-form row align-items-center col-md-7">
+    <form
+      onSubmit={(event) => {
+        event.preventDefault();
+        cityFromSearchInput(city);
+        setCity("");
+      }}
+      id="search-form" className="search-form row align-items-center col-md-7">
       <div className="col-12">
         <input type="search"
+          onChange={changeHandler}
           id="search"
           className="search-input form-control form-control-sm rounded-0"
           autoComplete="off"
           autoFocus={true}
           placeholder="Enter a city"
+          value={city}
         />
       </div>
       <div className="search-btn_block d-flex">
