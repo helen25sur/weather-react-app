@@ -7,3 +7,7 @@
   border-bottom-right-radius: 15px;
   border-top-right-radius: 15px;
 }
+
+.temperature {
+  font-size: 18px;
+}

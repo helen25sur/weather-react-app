@@ -14,7 +14,7 @@ export default function CityAndDate() {
   const time = (hours < 10 ? '0' + hours : hours) + ':' + (minutes < 10 ? '0' + minutes : minutes);
 
   return (
-    <div className="mb-3 bg-light-subtle py-2 shadow-lg rounded-1">
+    <div className="city-date mb-3 bg-light-subtle py-2 shadow-lg rounded-1">
       <h2 id="city" className="city-name card-title text-capitalize">
         {city}
       </h2>

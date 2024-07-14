@@ -16,7 +16,7 @@ export default function SearchInput({ cityFromSearchInput }) {
         setCity("");
       }}
       id="search-form" className="search-form row align-items-center col-md-7">
-      <div className="col-12">
+      <div className="col-11">
         <input type="search"
           onChange={changeHandler}
           id="search"
@@ -30,9 +30,6 @@ export default function SearchInput({ cityFromSearchInput }) {
       <div className="search-btn_block d-flex">
         <button type="submit" className="btn search-btn">
           <i className="fa-solid fa-magnifying-glass"></i>
-        </button>
-        <button id="location-btn" className="btn location-btn">
-          <i className="fa-solid fa-location-crosshairs"></i>
         </button>
       </div>
     </form>

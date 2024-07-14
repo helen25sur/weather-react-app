@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export default async function forecastDailyWeatherAPI(city) {
-  console.log(city);
+
   if (!city) {
     throw new Error('City parameter is required');
   }
@@ -19,7 +19,6 @@ export default async function forecastDailyWeatherAPI(city) {
     forecastData.city = response.data.city;
     forecastData.coordinates = response.data.coordinates;
     forecastData.daily = [...response.data.daily].filter((_, idx) => idx < 5);
-    // console.log(forecastData);
 
   } catch (error) {
     console.error(error.message);
