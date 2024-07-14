@@ -1,4 +1,9 @@
-export default function CityAndDate({ city }) {
+import { useContext } from "react";
+import { CityContext } from "../AppContext";
+
+export default function CityAndDate() {
+
+  const { city } = useContext(CityContext);
 
   const date = new Date();
   const dateDay = date.getDay();

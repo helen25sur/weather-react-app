@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { RotatingLines } from 'react-loader-spinner';
 
+import { CityContext } from "./AppContext";
+
 import Header from "./components/Header";
 import Main from "./components/Main";
 import "./index.css";
@@ -55,10 +57,13 @@ export default function App() {
   }
 
   return (
-    <div className="app-content col-10 my-4 mx-auto card mb-3 shadow-lg mh-100">
-      <Header cityFromSearchInput={cityFromSearchInput} />
-      <Main {...weatherData} />
-      <p className="text-center fs-6 small" style={{ color: 'var(--clr-main-title)' }}><a href="https://github.com/helen25sur/weather-react-app">Open-source code</a>, by Olena Surilova</p>
-    </div>
+    <CityContext.Provider value={{ city, setCity }}>
+      <div className="app-content col-10 my-4 mx-auto card mb-3 shadow-lg mh-100">
+        <Header cityFromSearchInput={cityFromSearchInput} />
+        <Main {...weatherData} />
+        <p className="text-center fs-6 small" style={{ color: 'var(--clr-main-title)' }}><a href="https://github.com/helen25sur/weather-react-app">Open-source code</a>, by Olena Surilova</p>
+      </div>
+    </CityContext.Provider>
+
   )
 }
