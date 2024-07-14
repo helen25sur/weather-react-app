@@ -15,6 +15,7 @@ export default async function searchingCurrentWeatherAPI(city) {
     humidity: '',
     wind: '',
     icon: '',
+    coord: null
   }
 
   try {
@@ -25,8 +26,7 @@ export default async function searchingCurrentWeatherAPI(city) {
     weatherData.humidity = response.data.main.humidity;
     weatherData.wind = response.data.wind.speed;
     weatherData.icon = `https://openweathermap.org/img/wn/${response.data.weather[0].icon}.png`;
-
-
+    weatherData.coord = response.data.coord;
 
   } catch (error) {
     console.error(error.message);
