@@ -4,7 +4,7 @@ export default function DayNow({ temperatureDescription, temperature, humidity, 
       <div className="row">
         <h3 className="fs-5">Now</h3>
         <div id="current-temperature-icon" className="col-4 fs-1">
-          <img src={icon} alt={temperatureDescription} />
+          <img src={icon} alt={temperatureDescription} className="main-icon-active" />
         </div>
         <div className="col-8">
           <span id="current-temperature-description" className="text-capitalize fs-5">
